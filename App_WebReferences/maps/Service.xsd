@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://win-r80s3v11i77/google_maps/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Subgurim.Controles" />
+  <xs:element name="getDirection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="desti" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDirectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Subgurim.Controles" minOccurs="0" name="getDirectionResult" nillable="true" type="q1:GLatLng" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMarker">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="logitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="label" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMarkerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Subgurim.Controles" minOccurs="0" name="getMarkerResult" nillable="true" type="q2:GInfoWindow" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLetGO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="button_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="start" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="end" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div_direction" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLetGOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Subgurim.Controles" minOccurs="0" name="getLetGOResult" nillable="true" type="q3:GDirection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

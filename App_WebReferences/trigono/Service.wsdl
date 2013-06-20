@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://vhost3.cs.rit.edu/trigono/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://vhost3.cs.rit.edu/trigono/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_invCos_InputMessage">
+    <wsdl:part name="parameters" element="tns:invCos" />
+  </wsdl:message>
+  <wsdl:message name="IService_invCos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:invCosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_cos_InputMessage">
+    <wsdl:part name="parameters" element="tns:cos" />
+  </wsdl:message>
+  <wsdl:message name="IService_cos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_cosh_InputMessage">
+    <wsdl:part name="parameters" element="tns:cosh" />
+  </wsdl:message>
+  <wsdl:message name="IService_cosh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:coshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_sin_InputMessage">
+    <wsdl:part name="parameters" element="tns:sin" />
+  </wsdl:message>
+  <wsdl:message name="IService_sin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_invSin_InputMessage">
+    <wsdl:part name="parameters" element="tns:invSin" />
+  </wsdl:message>
+  <wsdl:message name="IService_invSin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:invSinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Sinh_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sinh" />
+  </wsdl:message>
+  <wsdl:message name="IService_Sinh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SinhResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_invTan_InputMessage">
+    <wsdl:part name="parameters" element="tns:invTan" />
+  </wsdl:message>
+  <wsdl:message name="IService_invTan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:invTanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_tan_InputMessage">
+    <wsdl:part name="parameters" element="tns:tan" />
+  </wsdl:message>
+  <wsdl:message name="IService_tan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:tanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_tanh_InputMessage">
+    <wsdl:part name="parameters" element="tns:tanh" />
+  </wsdl:message>
+  <wsdl:message name="IService_tanh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:tanhResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="invCos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/invCos" message="tns:IService_invCos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/invCosResponse" message="tns:IService_invCos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/cos" message="tns:IService_cos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/cosResponse" message="tns:IService_cos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cosh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/cosh" message="tns:IService_cosh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/coshResponse" message="tns:IService_cosh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/sin" message="tns:IService_sin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/sinResponse" message="tns:IService_sin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="invSin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/invSin" message="tns:IService_invSin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/invSinResponse" message="tns:IService_invSin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sinh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Sinh" message="tns:IService_Sinh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SinhResponse" message="tns:IService_Sinh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="invTan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/invTan" message="tns:IService_invTan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/invTanResponse" message="tns:IService_invTan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="tan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/tan" message="tns:IService_tan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/tanResponse" message="tns:IService_tan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="tanh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/tanh" message="tns:IService_tanh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/tanhResponse" message="tns:IService_tanh_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="invCos">
+      <soap:operation soapAction="http://tempuri.org/IService/invCos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cos">
+      <soap:operation soapAction="http://tempuri.org/IService/cos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cosh">
+      <soap:operation soapAction="http://tempuri.org/IService/cosh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sin">
+      <soap:operation soapAction="http://tempuri.org/IService/sin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invSin">
+      <soap:operation soapAction="http://tempuri.org/IService/invSin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sinh">
+      <soap:operation soapAction="http://tempuri.org/IService/Sinh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invTan">
+      <soap:operation soapAction="http://tempuri.org/IService/invTan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tan">
+      <soap:operation soapAction="http://tempuri.org/IService/tan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tanh">
+      <soap:operation soapAction="http://tempuri.org/IService/tanh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://vhost3.cs.rit.edu/trigono/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

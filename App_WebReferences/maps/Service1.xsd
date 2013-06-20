@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Subgurim.Controles" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Subgurim.Controles" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="GLatLng">
+    <xs:sequence>
+      <xs:element name="_lat" type="xs:double" />
+      <xs:element name="_lng" type="xs:double" />
+      <xs:element name="_optionalStringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GLatLng" nillable="true" type="tns:GLatLng" />
+  <xs:complexType name="GInfoWindow">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Window">
+        <xs:sequence>
+          <xs:element name="_html" nillable="true" type="xs:string" />
+          <xs:element name="_javascript" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GInfoWindow" nillable="true" type="tns:GInfoWindow" />
+  <xs:complexType name="Window">
+    <xs:sequence>
+      <xs:element name="_ID" nillable="true" type="xs:string" />
+      <xs:element name="_gMarker" nillable="true" type="tns:GMarker" />
+      <xs:element name="_gPolygon" nillable="true" type="tns:GPolygon" />
+      <xs:element name="_gPolyline" nillable="true" type="tns:GPolyline" />
+      <xs:element name="_opened" type="xs:boolean" />
+      <xs:element name="_options" nillable="true" type="tns:GInfoWindowOptions" />
+      <xs:element name="_point" nillable="true" type="tns:GLatLng" />
+      <xs:element name="_sourceEvent" type="tns:GListener.Event" />
+      <xs:element name="who" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Window" nillable="true" type="tns:Window" />
+  <xs:complexType name="GMarker">
+    <xs:sequence>
+      <xs:element name="_ID" nillable="true" type="xs:string" />
+      <xs:element name="_javascript_GMarker" nillable="true" type="xs:string" />
+      <xs:element name="_markerTracker" nillable="true" type="tns:MarkerTracker" />
+      <xs:element name="_options" nillable="true" type="tns:GMarkerOptions" />
+      <xs:element name="_point" nillable="true" type="tns:GLatLng" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GMarker" nillable="true" type="tns:GMarker" />
+  <xs:complexType name="MarkerTracker">
+    <xs:sequence>
+      <xs:element name="_ID" nillable="true" type="xs:string" />
+      <xs:element name="_map" nillable="true" type="xs:string" />
+      <xs:element name="_markerID" nillable="true" type="xs:string" />
+      <xs:element name="_markerTrackerOptions" nillable="true" type="tns:MarkerTrackerOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MarkerTracker" nillable="true" type="tns:MarkerTracker" />
+  <xs:complexType name="MarkerTrackerOptions">
+    <xs:sequence>
+      <xs:element name="_color" nillable="true" type="xs:string" />
+      <xs:element name="_gMarkerOptions" nillable="true" type="tns:GMarkerOptions" />
+      <xs:element name="_iconScale" type="xs:double" />
+      <xs:element name="_length" type="xs:int" />
+      <xs:element name="_opacity" type="xs:double" />
+      <xs:element name="_padding" type="xs:int" />
+      <xs:element name="_panEvent" nillable="true" type="xs:string" />
+      <xs:element name="_quickPanEnabled" type="xs:boolean" />
+      <xs:element name="_updateEvent" nillable="true" type="xs:string" />
+      <xs:element name="_weight" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MarkerTrackerOptions" nillable="true" type="tns:MarkerTrackerOptions" />
+  <xs:complexType name="GMarkerOptions">
+    <xs:sequence>
+      <xs:element name="_animation" type="tns:GMarkerOptions.AnimationType" />
+      <xs:element name="_bounceGravity" type="xs:int" />
+      <xs:element name="_bouncy" type="xs:boolean" />
+      <xs:element name="_clickable" type="xs:boolean" />
+      <xs:element name="_dragCrossMove" type="xs:boolean" />
+      <xs:element name="_draggable" type="xs:boolean" />
+      <xs:element name="_icon" nillable="true" type="tns:GIcon" />
+      <xs:element name="_raiseOnDrag" type="xs:boolean" />
+      <xs:element name="_title" nillable="true" type="xs:string" />
+      <xs:element name="_visible" type="xs:boolean" />
+      <xs:element name="_zIndex" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GMarkerOptions" nillable="true" type="tns:GMarkerOptions" />
+  <xs:simpleType name="GMarkerOptions.AnimationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Bounce" />
+      <xs:enumeration value="Drop" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GMarkerOptions.AnimationType" nillable="true" type="tns:GMarkerOptions.AnimationType" />
+  <xs:complexType name="GIcon">
+    <xs:sequence>
+      <xs:element name="_ID" nillable="true" type="xs:string" />
+      <xs:element name="_baseIcon" nillable="true" type="tns:GIcon" />
+      <xs:element name="_flatIconOptions" nillable="true" type="tns:FlatIconOptions" />
+      <xs:element name="_iconAnchor" nillable="true" type="tns:GPoint" />
+      <xs:element name="_iconSize" nillable="true" type="tns:GSize" />
+      <xs:element name="_image" nillable="true" type="xs:string" />
+      <xs:element name="_imageMap" nillable="true" type="tns:ArrayOfGPoint" />
+      <xs:element name="_infoWindowAnchor" nillable="true" type="tns:GPoint" />
+      <xs:element name="_labeledMarkerIconOptions" nillable="true" type="tns:LabeledMarkerIconOptions" />
+      <xs:element name="_markerIconOptions" nillable="true" type="tns:MarkerIconOptions" />
+      <xs:element name="_maxHeight" type="xs:int" />
+      <xs:element name="_mozPrintImage" nillable="true" type="xs:string" />
+      <xs:element name="_printImage" nillable="true" type="xs:string" />
+      <xs:element name="_printShadow" nillable="true" type="xs:string" />
+      <xs:element name="_shadow" nillable="true" type="xs:string" />
+      <xs:element name="_shadowSize" nillable="true" type="tns:GSize" />
+      <xs:element name="_transparent" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GIcon" nillable="true" type="tns:GIcon" />
+  <xs:complexType name="FlatIconOptions">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseIconOptions">
+        <xs:sequence>
+          <xs:element name="_height" type="xs:int" />
+          <xs:element name="_label" nillable="true" type="xs:string" />
+          <xs:element name="_labelColor" nillable="true" type="xs:string" />
+          <xs:element name="_labelSize" type="xs:int" />
+          <xs:element name="_primaryColor" nillable="true" type="xs:string" />
+          <xs:element name="_shadowColor" nillable="true" type="xs:string" />
+          <xs:element name="_shape" type="tns:FlatIconOptions.flatIconShapeEnum" />
+          <xs:element name="_width" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FlatIconOptions" nillable="true" type="tns:FlatIconOptions" />
+  <xs:complexType name="BaseIconOptions">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="BaseIconOptions" nillable="true" type="tns:BaseIconOptions" />
+  <xs:simpleType name="FlatIconOptions.flatIconShapeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="circle" />
+      <xs:enumeration value="roundedrect" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FlatIconOptions.flatIconShapeEnum" nillable="true" type="tns:FlatIconOptions.flatIconShapeEnum" />
+  <xs:complexType name="GPoint">
+    <xs:sequence>
+      <xs:element name="_x" type="xs:double" />
+      <xs:element name="_y" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GPoint" nillable="true" type="tns:GPoint" />
+  <xs:complexType name="GSize">
+    <xs:sequence>
+      <xs:element name="_height" type="xs:double" />
+      <xs:element name="_width" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GSize" nillable="true" type="tns:GSize" />
+  <xs:complexType name="ArrayOfGPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GPoint" nillable="true" type="tns:GPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGPoint" nillable="true" type="tns:ArrayOfGPoint" />
+  <xs:complexType name="LabeledMarkerIconOptions">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseIconOptions">
+        <xs:sequence>
+          <xs:element name="_addStar" type="xs:boolean" />
+          <xs:element name="_label" nillable="true" type="xs:string" />
+          <xs:element name="_labelColor" nillable="true" type="xs:string" />
+          <xs:element name="_primaryColor" nillable="true" type="xs:string" />
+          <xs:element name="_starPrimaryColor" nillable="true" type="xs:string" />
+          <xs:element name="_starStrokeColor" nillable="true" type="xs:string" />
+          <xs:element name="_strokeColor" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LabeledMarkerIconOptions" nillable="true" type="tns:LabeledMarkerIconOptions" />
+  <xs:complexType name="MarkerIconOptions">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseIconOptions">
+        <xs:sequence>
+          <xs:element name="_cornerColor" nillable="true" type="xs:string" />
+          <xs:element name="_height" type="xs:int" />
+          <xs:element name="_primaryColor" nillable="true" type="xs:string" />
+          <xs:element name="_strokeColor" nillable="true" type="xs:string" />
+          <xs:element name="_width" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MarkerIconOptions" nillable="true" type="tns:MarkerIconOptions" />
+  <xs:complexType name="GPolygon">
+    <xs:sequence>
+      <xs:element name="_ID" nillable="true" type="xs:string" />
+      <xs:element name="_clickable" type="xs:boolean" />
+      <xs:element name="_enableDrawing" type="xs:boolean" />
+      <xs:element name="_enableEditing" type="xs:boolean" />
+      <xs:element name="_fillcolor" nillable="true" type="xs:string" />
+      <xs:element name="_fillopacity" type="xs:double" />
+      <xs:element name="_points" nillable="true" type="tns:ArrayOfGLatLng" />
+      <xs:element name="_polygonID" nillable="true" type="xs:string" />
+      <xs:element name="_strokecolor" nillable="true" type="xs:string" />
+      <xs:element name="_strokeopacity" type="xs:double" />
+      <xs:element name="_strokeweight" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GPolygon" nillable="true" type="tns:GPolygon" />
+  <xs:complexType name="ArrayOfGLatLng">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GLatLng" nillable="true" type="tns:GLatLng" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGLatLng" nillable="true" type="tns:ArrayOfGLatLng" />
+  <xs:complexType name="GPolyline">
+    <xs:sequence>
+      <xs:element name="_ID" nillable="true" type="xs:string" />
+      <xs:element name="_PolylineID" nillable="true" type="xs:string" />
+      <xs:element name="_clickable" type="xs:boolean" />
+      <xs:element name="_color" nillable="true" type="xs:string" />
+      <xs:element name="_geodesic" type="xs:boolean" />
+      <xs:element name="_opacity" type="xs:double" />
+      <xs:element name="_points" nillable="true" type="tns:ArrayOfGLatLng" />
+      <xs:element name="_weight" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GPolyline" nillable="true" type="tns:GPolyline" />
+  <xs:complexType name="GInfoWindowOptions">
+    <xs:sequence>
+      <xs:element name="_disableAutoPan" type="xs:boolean" />
+      <xs:element name="_mapType" type="tns:GMapType.GTypes" />
+      <xs:element name="_maxContent" nillable="true" type="xs:string" />
+      <xs:element name="_maxTitle" nillable="true" type="xs:string" />
+      <xs:element name="_maxWidth" type="xs:int" />
+      <xs:element name="_maximized" nillable="true" type="xs:string" />
+      <xs:element name="_onCloseFn" nillable="true" type="xs:string" />
+      <xs:element name="_onOpenFn" nillable="true" type="xs:string" />
+      <xs:element name="_pixelOffset" nillable="true" type="tns:GSize" />
+      <xs:element name="_selectedTab" type="xs:int" />
+      <xs:element name="_style" nillable="true" type="xs:string" />
+      <xs:element name="_zIndex" type="xs:int" />
+      <xs:element name="_zoomLevel" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GInfoWindowOptions" nillable="true" type="tns:GInfoWindowOptions" />
+  <xs:simpleType name="GMapType.GTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Satellite" />
+      <xs:enumeration value="Hybrid" />
+      <xs:enumeration value="Physical" />
+      <xs:enumeration value="Styled" />
+      <xs:enumeration value="MapMaker_Normal" />
+      <xs:enumeration value="MapMaker_Hybrid" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GMapType.GTypes" nillable="true" type="tns:GMapType.GTypes" />
+  <xs:simpleType name="GListener.Event">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="addmaptype" />
+      <xs:enumeration value="removemaptype" />
+      <xs:enumeration value="click" />
+      <xs:enumeration value="movestart" />
+      <xs:enumeration value="move" />
+      <xs:enumeration value="moveend" />
+      <xs:enumeration value="zoomend" />
+      <xs:enumeration value="maptypechanged" />
+      <xs:enumeration value="infowindowopen" />
+      <xs:enumeration value="infowindowbeforeclose" />
+      <xs:enumeration value="infowindowclose" />
+      <xs:enumeration value="addoverlay" />
+      <xs:enumeration value="removeoverlay" />
+      <xs:enumeration value="clearoverlays" />
+      <xs:enumeration value="mouseover" />
+      <xs:enumeration value="mouseout" />
+      <xs:enumeration value="mousemove" />
+      <xs:enumeration value="dragstart" />
+      <xs:enumeration value="drag" />
+      <xs:enumeration value="dragend" />
+      <xs:enumeration value="dblclick" />
+      <xs:enumeration value="singlerightclick" />
+      <xs:enumeration value="serverEvent" />
+      <xs:enumeration value="tilesloaded" />
+      <xs:enumeration value="closeclick" />
+      <xs:enumeration value="maximizeclick" />
+      <xs:enumeration value="maximizeend" />
+      <xs:enumeration value="restoreclick" />
+      <xs:enumeration value="restoreend" />
+      <xs:enumeration value="lineupdated" />
+      <xs:enumeration value="endline" />
+      <xs:enumeration value="cancelline" />
+      <xs:enumeration value="rightclick" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GListener.Event" nillable="true" type="tns:GListener.Event" />
+  <xs:complexType name="GDirection">
+    <xs:sequence>
+      <xs:element name="_autoGenerate" type="xs:boolean" />
+      <xs:element name="_avoidHighways" type="xs:boolean" />
+      <xs:element name="_buttonElementId" nillable="true" type="xs:string" />
+      <xs:element name="_buttonText" nillable="true" type="xs:string" />
+      <xs:element name="_clearMap" type="xs:boolean" />
+      <xs:element name="_divElementId" nillable="true" type="xs:string" />
+      <xs:element name="_errorMessage" nillable="true" type="xs:string" />
+      <xs:element name="_fromElementId" nillable="true" type="xs:string" />
+      <xs:element name="_fromText" nillable="true" type="xs:string" />
+      <xs:element name="_locale" nillable="true" type="xs:string" />
+      <xs:element name="_preserveViewport" type="xs:boolean" />
+      <xs:element name="_toElementId" nillable="true" type="xs:string" />
+      <xs:element name="_toText" nillable="true" type="xs:string" />
+      <xs:element name="_travelMode" type="tns:GDirection.GTravelModeEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GDirection" nillable="true" type="tns:GDirection" />
+  <xs:simpleType name="GDirection.GTravelModeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="G_TRAVEL_MODE_WALKING" />
+      <xs:enumeration value="G_TRAVEL_MODE_DRIVING" />
+      <xs:enumeration value="BICYCLING" />
+      <xs:enumeration value="DRIVING" />
+      <xs:enumeration value="TRANSIT" />
+      <xs:enumeration value="WALKING" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GDirection.GTravelModeEnum" nillable="true" type="tns:GDirection.GTravelModeEnum" />
+</xs:schema>
